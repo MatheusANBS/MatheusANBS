@@ -5,7 +5,7 @@
 <p align="center">
   <a href="#selected-work">Selected work</a> ·
   <a href="#toolkit">Toolkit</a> ·
-  <a href="https://gist.github.com/MatheusANBS">Notes & snippets</a>
+  <a href="https://gist.github.com/MatheusANBS/0b958ab7685ee46fbe139b476d00bbd7">Notes & snippets</a>
 </p>
 
 I build practical software for Windows, mobile, and the space between an idea and a tool people can actually use. I care about native-feeling interfaces, local-first workflows, and understanding the systems underneath the UI.
@@ -53,6 +53,12 @@ I build practical software for Windows, mobile, and the space between an idea an
 - Building desktop tools that expose complex systems through restrained, understandable interfaces.
 - Exploring local-first AI clients and runtime inspection without hiding the implementation details.
 - Turning one-off workflows into software that is safe to repeat.
+
+## Field notes
+
+Small references that are more useful as living snippets than full repositories:
+
+- [Windows desktop release checklist](https://gist.github.com/MatheusANBS/0b958ab7685ee46fbe139b476d00bbd7) — packaging, runtime behavior, clean-machine testing, and release hygiene.
 
 <p align="center">
   <sub>Most of my work starts with a real problem and ends as a small, focused product.</sub>
