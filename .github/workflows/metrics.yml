@@ -1,0 +1,75 @@
+name: Metrics
+
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/metrics.yml"
+
+concurrency:
+  group: profile-metrics
+  cancel-in-progress: true
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      METRICS_TOKEN: ${{ secrets.METRICS_TOKEN }}
+
+    steps:
+      - name: Explain missing token
+        if: ${{ env.METRICS_TOKEN == '' }}
+        run: echo "::notice title=Metrics not regenerated::Add a dedicated METRICS_TOKEN repository secret to enable scheduled updates."
+
+      - name: Generate overview
+        if: ${{ env.METRICS_TOKEN != '' }}
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          committer_token: ${{ secrets.GITHUB_TOKEN }}
+          committer_message: "chore(metrics): update ${filename} [skip ci]"
+          filename: metrics/overview.svg
+          output_condition: data-changed
+          template: classic
+          user: MatheusANBS
+          base: header, activity, community, repositories, metadata
+          config_timezone: America/Sao_Paulo
+          config_display: large
+          config_animations: no
+          config_base64: yes
+          config_twemoji: yes
+          config_order: base.header, base.activity, plugin.languages, base.community, base.repositories, base.metadata
+          plugin_languages: yes
+          plugin_languages_limit: 8
+          plugin_languages_sections: most-used
+          plugin_languages_details: percentage
+          plugin_languages_colors: github
+          retries: 1
+          retries_delay: 0
+
+      - name: Generate contribution calendar
+        if: ${{ env.METRICS_TOKEN != '' }}
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          committer_token: ${{ secrets.GITHUB_TOKEN }}
+          committer_message: "chore(metrics): update ${filename} [skip ci]"
+          filename: metrics/calendar.svg
+          output_condition: data-changed
+          template: classic
+          user: MatheusANBS
+          base: ""
+          config_timezone: America/Sao_Paulo
+          config_display: large
+          config_animations: no
+          config_base64: yes
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+          retries: 1
+          retries_delay: 0
