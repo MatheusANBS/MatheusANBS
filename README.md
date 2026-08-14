@@ -8,7 +8,7 @@
   <a href="https://gist.github.com/MatheusANBS/0b958ab7685ee46fbe139b476d00bbd7">Notes & snippets</a>
 </p>
 
-I build practical software for Windows, mobile, and the space between an idea and a tool people can actually use. I care about native-feeling interfaces, local-first workflows, and understanding the systems underneath the UI.
+I build practical software for Windows and mobile, with a focus on native-feeling interfaces, local-first workflows, and systems tooling.
 
 ## Selected work
 
