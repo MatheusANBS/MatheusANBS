@@ -15,4 +15,4 @@ Se eu uso todo dia, vira ferramenta.
 
 - **DBZ**: cliente de banco de dados pro desktop, na linha do DBeaver, só que leve. Rust, Tauri, React e um grid próprio em canvas.
 - **Argos**: servidor MCP em C++23 pra depurar memória de processos em runtime, com autorização explícita pra cada sessão e cada escrita.
-- **BC**: overlay em Rust que lê a memória do Battlefield 4 de fora do processo, e o scry, um servidor MCP em que o próprio sistema de tipos impede escrever sem autorização.
+- **scry**: app desktop em Rust pra inspecionar a memória de processos, rodando sobre o mesmo motor de um servidor MCP. A interface é HTML e CSS numa WebView, e quem faz todo o trabalho é o Rust.
