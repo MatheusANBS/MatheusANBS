@@ -1,4 +1,4 @@
-<img src="./assets/city.webp" alt="Cidade cyberpunk em pixel art à noite, com carros voadores passando" width="100%">
+<img src="./assets/cidade.webp" alt="Cidade cyberpunk em pixel art à noite, com carros voadores passando" width="100%">
 
 ### oi, sou o Matheus.
 
